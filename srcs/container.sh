@@ -21,7 +21,7 @@ mv ../../../config.inc.php phpmyadmin/. && cd && cd ..
 
 # SSL
 mkdir /etc/nginx/ssl
-openss1 req -x509 -nodes -days 365 -newkey rsa:2048 -keyout etc/nginx/ssl/localhost.key -out /etc/nginx/ssl /etc/nginx/ssl/localhost.pem -subj "/C=FR/ST=Paris/L=Paris/O=42Paris/OU=adelille/CN=localhost"
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout etc/nginx/ssl/localhost.key -out /etc/nginx/ssl /etc/nginx/ssl/localhost.pem -subj "/C=FR/ST=Paris/L=Paris/O=42Paris/OU=adelille/CN=localhost"
 
 # Env Variable
 envsubst '${auto_index}' < config_nginx > default && rm config_nginx
